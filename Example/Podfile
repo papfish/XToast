@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'XToast_Example' do
+  pod 'XToast', :path => '../'
+
+  target 'XToast_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
