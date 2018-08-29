@@ -1,29 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zLy-El-DTR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="wQg-tq-qST">
+        <scene sceneID="CkE-m6-OCK">
             <objects>
-                <viewController id="whP-gf-Uak" customClass="XViewController" sceneMemberID="viewController">
+                <viewController id="zLy-El-DTR" customClass="XViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
-                        <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
+                        <viewControllerLayoutGuide type="top" id="aY5-xC-0Mk"/>
+                        <viewControllerLayoutGuide type="bottom" id="i6z-P9-UWs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TpU-gO-2f1">
+                    <view key="view" contentMode="scaleToFill" id="Fxo-c0-ArC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRZ-8i-sQk">
+                                <rect key="frame" x="144" y="28" width="86" height="30"/>
+                                <state key="normal" title="toast in view"/>
+                                <connections>
+                                    <action selector="toastEvent:" destination="zLy-El-DTR" eventType="touchUpInside" id="gj0-0R-WcT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFV-kA-JkY">
+                                <rect key="frame" x="134" y="66" width="107" height="30"/>
+                                <state key="normal" title="toast in window"/>
+                                <connections>
+                                    <action selector="toastEvent:" destination="zLy-El-DTR" eventType="touchUpInside" id="uM6-cb-3lv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXr-Mw-voJ">
+                                <rect key="frame" x="137" y="104" width="102" height="30"/>
+                                <state key="normal" title="loading in view"/>
+                                <connections>
+                                    <action selector="toastEvent:" destination="zLy-El-DTR" eventType="touchUpInside" id="ieS-zp-ouQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkv-3b-p7k">
+                                <rect key="frame" x="126" y="142" width="123" height="30"/>
+                                <state key="normal" title="loading in window"/>
+                                <connections>
+                                    <action selector="toastEvent:" destination="zLy-El-DTR" eventType="touchUpInside" id="8sd-uk-AyN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paY-zr-LVT">
+                                <rect key="frame" x="106" y="180" width="164" height="30"/>
+                                <state key="normal" title="loading in view with text"/>
+                                <connections>
+                                    <action selector="toastEvent:" destination="zLy-El-DTR" eventType="touchUpInside" id="oaF-h6-WhS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7U-1t-jiU">
+                                <rect key="frame" x="95" y="218" width="185" height="30"/>
+                                <state key="normal" title="loading in window with text"/>
+                                <connections>
+                                    <action selector="toastEvent:" destination="zLy-El-DTR" eventType="touchUpInside" id="p6H-0U-Xba"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Z7U-1t-jiU" firstAttribute="top" secondItem="paY-zr-LVT" secondAttribute="bottom" constant="8" id="27Z-6s-XIP"/>
+                            <constraint firstItem="ZFV-kA-JkY" firstAttribute="centerX" secondItem="Fxo-c0-ArC" secondAttribute="centerX" id="7O9-Oj-gvy"/>
+                            <constraint firstItem="paY-zr-LVT" firstAttribute="centerX" secondItem="Fxo-c0-ArC" secondAttribute="centerX" id="8xj-BS-fDh"/>
+                            <constraint firstItem="ZFV-kA-JkY" firstAttribute="top" secondItem="YRZ-8i-sQk" secondAttribute="bottom" constant="8" id="Crp-hr-49Q"/>
+                            <constraint firstItem="paY-zr-LVT" firstAttribute="top" secondItem="Kkv-3b-p7k" secondAttribute="bottom" constant="8" id="I3t-gr-j7T"/>
+                            <constraint firstItem="Kkv-3b-p7k" firstAttribute="top" secondItem="cXr-Mw-voJ" secondAttribute="bottom" constant="8" id="Nmi-iv-3Be"/>
+                            <constraint firstItem="Z7U-1t-jiU" firstAttribute="centerX" secondItem="Fxo-c0-ArC" secondAttribute="centerX" id="U0R-YB-9va"/>
+                            <constraint firstItem="cXr-Mw-voJ" firstAttribute="top" secondItem="ZFV-kA-JkY" secondAttribute="bottom" constant="8" id="WXm-7P-xCS"/>
+                            <constraint firstItem="Kkv-3b-p7k" firstAttribute="centerX" secondItem="Fxo-c0-ArC" secondAttribute="centerX" id="c3U-zK-ELP"/>
+                            <constraint firstItem="YRZ-8i-sQk" firstAttribute="top" secondItem="aY5-xC-0Mk" secondAttribute="bottom" constant="8" id="eC1-6h-eqF"/>
+                            <constraint firstItem="cXr-Mw-voJ" firstAttribute="centerX" secondItem="Fxo-c0-ArC" secondAttribute="centerX" id="kfl-9f-cIH"/>
+                            <constraint firstItem="YRZ-8i-sQk" firstAttribute="centerX" secondItem="Fxo-c0-ArC" secondAttribute="centerX" id="nqf-cS-8hb"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2LL-5b-ObZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="433"/>
         </scene>

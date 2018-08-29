@@ -2,8 +2,8 @@
 //  XToastTests.m
 //  XToastTests
 //
-//  Created by xuliang on 08/29/2018.
-//  Copyright (c) 2018 xuliang. All rights reserved.
+//  Created by Leo on 08/29/2018.
+//  Copyright (c) 2018 Leo. All rights reserved.
 //
 
 @import XCTest;

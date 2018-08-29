@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/xuliang/XToast'
+  s.homepage         = 'https://github.com/xuliang2015/XToast'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'xuliang' => 'liang.xu@kingsunsoft.com' }
-  s.source           = { :git => 'https://github.com/xuliang/XToast.git', :tag => s.version.to_s }
+  s.author           = { 'xuliang2015' => 'liang.xv@qq.com' }
+  s.source           = { :git => 'https://github.com/xuliang2015/XToast.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

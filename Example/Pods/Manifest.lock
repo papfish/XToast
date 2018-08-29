@@ -1,0 +1,16 @@
+PODS:
+  - XToast (0.1.0)
+
+DEPENDENCIES:
+  - XToast (from `../`)
+
+EXTERNAL SOURCES:
+  XToast:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  XToast: 6942e160f468301d949cfbc2755e590b9b262b79
+
+PODFILE CHECKSUM: 25ed3e9453ceee69dc0320f279eccdd5202e6c14
+
+COCOAPODS: 1.5.3
