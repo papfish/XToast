@@ -19,7 +19,11 @@
 
 + (void)showLoading;
 
++ (void)showLoadingAndHideAfter:(NSTimeInterval)interval;
+
 + (void)showLoadingWithText:(NSString *)text;
+
++ (void)showLoadingWithText:(NSString *)text hideAfter:(NSTimeInterval)interval;
 
 + (void)hideLoading;
 
@@ -30,7 +34,11 @@
 
 + (void)showLoadingInView:(UIView *)view;
 
++ (void)showLoadingInView:(UIView *)view hideAfter:(NSTimeInterval)interval;
+
 + (void)showLoadingWithText:(NSString *)text inView:(UIView *)view;
+
++ (void)showLoadingWithText:(NSString *)text inView:(UIView *)view hideAfter:(NSTimeInterval)interval;
 
 + (void)hideLoadingInView:(UIView *)view;
 

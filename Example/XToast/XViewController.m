@@ -65,6 +65,12 @@
             });
         }
             break;
+        case 1006:
+            [XToast showLoadingWithText:@"Loading" inView:self.view hideAfter:5];
+            break;
+        case 1007:
+            [XToast showLoadingWithText:@"Loading" hideAfter:5];
+            break;
         default:
             break;
     }

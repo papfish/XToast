@@ -8,6 +8,8 @@
 #import "XToast.h"
 #import "UIView+Toast.h"
 
+static const NSString *loading_text_def = @"Loading";
+
 @implementation XToast
 
 + (void)load {
@@ -33,8 +35,26 @@
     [[XToast window] makeToastActivity:CSToastPositionCenter];
 }
 
++ (void)showLoadingAndHideAfter:(NSTimeInterval)interval {
+    if (interval > 0) {
+        [XToast showLoading];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [XToast hideLoading];
+        });
+    }
+}
+
 + (void)showLoadingWithText:(NSString *)text {
-    [[XToast window] makeToastActivity:CSToastPositionCenter withText:text ? text : @"Loading"];
+    [[XToast window] makeToastActivity:CSToastPositionCenter withText:text ? text : loading_text_def];
+}
+
++ (void)showLoadingWithText:(NSString *)text hideAfter:(NSTimeInterval)interval {
+    if (interval > 0) {
+        [XToast showLoadingWithText:text];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [XToast hideLoading];
+        });
+    }
 }
 
 + (void)hideLoading {
@@ -62,9 +82,29 @@
     [view makeToastActivity:CSToastPositionCenter];
 }
 
++ (void)showLoadingInView:(UIView *)view hideAfter:(NSTimeInterval)interval {
+    if (!view) return;
+    if (interval > 0) {
+        [XToast showLoadingInView:view];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [XToast hideLoadingInView:view];
+        });
+    }
+}
+
 + (void)showLoadingWithText:(NSString *)text inView:(UIView *)view {
     if (!view) return;
-    [view makeToastActivity:CSToastPositionCenter withText:text ? text : @"Loading"];
+    [view makeToastActivity:CSToastPositionCenter withText:text ? text : loading_text_def];
+}
+
++ (void)showLoadingWithText:(NSString *)text inView:(UIView *)view hideAfter:(NSTimeInterval)interval {
+    if (!view) return;
+    if (interval > 0) {
+        [XToast showLoadingWithText:text inView:view];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(interval * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [XToast hideLoadingInView:view];
+        });
+    }
 }
 
 + (void)hideLoadingInView:(UIView *)view {

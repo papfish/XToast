@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zLy-El-DTR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1Ah-Ld-erX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,78 +10,96 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="CkE-m6-OCK">
+        <scene sceneID="42I-Cp-4Vy">
             <objects>
-                <viewController id="zLy-El-DTR" customClass="XViewController" sceneMemberID="viewController">
+                <viewController id="1Ah-Ld-erX" customClass="XViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aY5-xC-0Mk"/>
-                        <viewControllerLayoutGuide type="bottom" id="i6z-P9-UWs"/>
+                        <viewControllerLayoutGuide type="top" id="vg8-sx-8pG"/>
+                        <viewControllerLayoutGuide type="bottom" id="lAB-uT-B5V"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Fxo-c0-ArC">
+                    <view key="view" contentMode="scaleToFill" id="XkV-oo-F99">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRZ-8i-sQk">
+                            <button opaque="NO" tag="1000" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBW-p4-pS9">
                                 <rect key="frame" x="144" y="28" width="86" height="30"/>
                                 <state key="normal" title="toast in view"/>
                                 <connections>
-                                    <action selector="toastEvent:" destination="zLy-El-DTR" eventType="touchUpInside" id="gj0-0R-WcT"/>
+                                    <action selector="toastEvent:" destination="1Ah-Ld-erX" eventType="touchUpInside" id="PP0-UO-sEx"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFV-kA-JkY">
+                            <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bdS-fr-TqY">
                                 <rect key="frame" x="134" y="66" width="107" height="30"/>
                                 <state key="normal" title="toast in window"/>
                                 <connections>
-                                    <action selector="toastEvent:" destination="zLy-El-DTR" eventType="touchUpInside" id="uM6-cb-3lv"/>
+                                    <action selector="toastEvent:" destination="1Ah-Ld-erX" eventType="touchUpInside" id="f2F-gz-hIM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cXr-Mw-voJ">
+                            <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0q1-aE-F7h">
                                 <rect key="frame" x="137" y="104" width="102" height="30"/>
                                 <state key="normal" title="loading in view"/>
                                 <connections>
-                                    <action selector="toastEvent:" destination="zLy-El-DTR" eventType="touchUpInside" id="ieS-zp-ouQ"/>
+                                    <action selector="toastEvent:" destination="1Ah-Ld-erX" eventType="touchUpInside" id="f23-1o-EQY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kkv-3b-p7k">
+                            <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L7x-8L-65f">
                                 <rect key="frame" x="126" y="142" width="123" height="30"/>
                                 <state key="normal" title="loading in window"/>
                                 <connections>
-                                    <action selector="toastEvent:" destination="zLy-El-DTR" eventType="touchUpInside" id="8sd-uk-AyN"/>
+                                    <action selector="toastEvent:" destination="1Ah-Ld-erX" eventType="touchUpInside" id="3jf-b3-Fxy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paY-zr-LVT">
+                            <button opaque="NO" tag="1004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ByG-kn-X4I">
                                 <rect key="frame" x="106" y="180" width="164" height="30"/>
                                 <state key="normal" title="loading in view with text"/>
                                 <connections>
-                                    <action selector="toastEvent:" destination="zLy-El-DTR" eventType="touchUpInside" id="oaF-h6-WhS"/>
+                                    <action selector="toastEvent:" destination="1Ah-Ld-erX" eventType="touchUpInside" id="l3o-64-ILF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7U-1t-jiU">
+                            <button opaque="NO" tag="1005" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ic6-Cy-XdD">
                                 <rect key="frame" x="95" y="218" width="185" height="30"/>
                                 <state key="normal" title="loading in window with text"/>
                                 <connections>
-                                    <action selector="toastEvent:" destination="zLy-El-DTR" eventType="touchUpInside" id="p6H-0U-Xba"/>
+                                    <action selector="toastEvent:" destination="1Ah-Ld-erX" eventType="touchUpInside" id="0Bv-KG-OLs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1006" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OmE-bl-ffp">
+                                <rect key="frame" x="77" y="256" width="221" height="30"/>
+                                <state key="normal" title="loading in view and hide after 5s"/>
+                                <connections>
+                                    <action selector="toastEvent:" destination="1Ah-Ld-erX" eventType="touchUpInside" id="42x-Vj-rDy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1007" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ie4-th-B8z">
+                                <rect key="frame" x="66" y="294" width="242" height="30"/>
+                                <state key="normal" title="loading in window and hide after 5s"/>
+                                <connections>
+                                    <action selector="toastEvent:" destination="1Ah-Ld-erX" eventType="touchUpInside" id="mrM-Hb-1pK"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Z7U-1t-jiU" firstAttribute="top" secondItem="paY-zr-LVT" secondAttribute="bottom" constant="8" id="27Z-6s-XIP"/>
-                            <constraint firstItem="ZFV-kA-JkY" firstAttribute="centerX" secondItem="Fxo-c0-ArC" secondAttribute="centerX" id="7O9-Oj-gvy"/>
-                            <constraint firstItem="paY-zr-LVT" firstAttribute="centerX" secondItem="Fxo-c0-ArC" secondAttribute="centerX" id="8xj-BS-fDh"/>
-                            <constraint firstItem="ZFV-kA-JkY" firstAttribute="top" secondItem="YRZ-8i-sQk" secondAttribute="bottom" constant="8" id="Crp-hr-49Q"/>
-                            <constraint firstItem="paY-zr-LVT" firstAttribute="top" secondItem="Kkv-3b-p7k" secondAttribute="bottom" constant="8" id="I3t-gr-j7T"/>
-                            <constraint firstItem="Kkv-3b-p7k" firstAttribute="top" secondItem="cXr-Mw-voJ" secondAttribute="bottom" constant="8" id="Nmi-iv-3Be"/>
-                            <constraint firstItem="Z7U-1t-jiU" firstAttribute="centerX" secondItem="Fxo-c0-ArC" secondAttribute="centerX" id="U0R-YB-9va"/>
-                            <constraint firstItem="cXr-Mw-voJ" firstAttribute="top" secondItem="ZFV-kA-JkY" secondAttribute="bottom" constant="8" id="WXm-7P-xCS"/>
-                            <constraint firstItem="Kkv-3b-p7k" firstAttribute="centerX" secondItem="Fxo-c0-ArC" secondAttribute="centerX" id="c3U-zK-ELP"/>
-                            <constraint firstItem="YRZ-8i-sQk" firstAttribute="top" secondItem="aY5-xC-0Mk" secondAttribute="bottom" constant="8" id="eC1-6h-eqF"/>
-                            <constraint firstItem="cXr-Mw-voJ" firstAttribute="centerX" secondItem="Fxo-c0-ArC" secondAttribute="centerX" id="kfl-9f-cIH"/>
-                            <constraint firstItem="YRZ-8i-sQk" firstAttribute="centerX" secondItem="Fxo-c0-ArC" secondAttribute="centerX" id="nqf-cS-8hb"/>
+                            <constraint firstItem="0q1-aE-F7h" firstAttribute="centerX" secondItem="XkV-oo-F99" secondAttribute="centerX" id="3Cw-7W-1a0"/>
+                            <constraint firstItem="ie4-th-B8z" firstAttribute="top" secondItem="OmE-bl-ffp" secondAttribute="bottom" constant="8" id="5Z0-Fm-irc"/>
+                            <constraint firstItem="bdS-fr-TqY" firstAttribute="top" secondItem="eBW-p4-pS9" secondAttribute="bottom" constant="8" id="9SZ-81-BbO"/>
+                            <constraint firstItem="0q1-aE-F7h" firstAttribute="top" secondItem="bdS-fr-TqY" secondAttribute="bottom" constant="8" id="B9c-i1-QkA"/>
+                            <constraint firstItem="OmE-bl-ffp" firstAttribute="top" secondItem="Ic6-Cy-XdD" secondAttribute="bottom" constant="8" id="DeB-xG-3II"/>
+                            <constraint firstItem="eBW-p4-pS9" firstAttribute="top" secondItem="vg8-sx-8pG" secondAttribute="bottom" constant="8" id="KXZ-Dd-tH5"/>
+                            <constraint firstItem="L7x-8L-65f" firstAttribute="top" secondItem="0q1-aE-F7h" secondAttribute="bottom" constant="8" id="NDy-uc-ik4"/>
+                            <constraint firstItem="ByG-kn-X4I" firstAttribute="top" secondItem="L7x-8L-65f" secondAttribute="bottom" constant="8" id="Obw-eD-q6v"/>
+                            <constraint firstItem="ie4-th-B8z" firstAttribute="centerX" secondItem="XkV-oo-F99" secondAttribute="centerX" id="P74-Cq-VCh"/>
+                            <constraint firstItem="Ic6-Cy-XdD" firstAttribute="top" secondItem="ByG-kn-X4I" secondAttribute="bottom" constant="8" id="Ubl-lH-Di5"/>
+                            <constraint firstItem="ByG-kn-X4I" firstAttribute="centerX" secondItem="XkV-oo-F99" secondAttribute="centerX" id="dwR-oY-FRs"/>
+                            <constraint firstItem="L7x-8L-65f" firstAttribute="centerX" secondItem="XkV-oo-F99" secondAttribute="centerX" id="fem-BX-sgp"/>
+                            <constraint firstItem="eBW-p4-pS9" firstAttribute="centerX" secondItem="XkV-oo-F99" secondAttribute="centerX" id="i0L-Mz-yt0"/>
+                            <constraint firstItem="bdS-fr-TqY" firstAttribute="centerX" secondItem="XkV-oo-F99" secondAttribute="centerX" id="ihm-CV-XN1"/>
+                            <constraint firstItem="OmE-bl-ffp" firstAttribute="centerX" secondItem="XkV-oo-F99" secondAttribute="centerX" id="oB5-Fh-FcD"/>
+                            <constraint firstItem="Ic6-Cy-XdD" firstAttribute="centerX" secondItem="XkV-oo-F99" secondAttribute="centerX" id="wfi-Be-5yg"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2LL-5b-ObZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cf6-V2-9gp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="433"/>
         </scene>
