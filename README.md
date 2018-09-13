@@ -7,8 +7,22 @@
 
 ## Description
 
-
 XToast是基于 [https://github.com/scalessec/Toast](https://github.com/scalessec/Toast) 的4.0.0版本调整及封装。
+
+根据项目实际的需求，封装了以下功能：
+
+#### 功能
+
+* 支持显示在`View`或者`Window`上，使用默认的配置信息。
+* 添加超时自动消失的`Loading View`，支持添加小段文字。
+* 添加`Loading View`的遮罩层，并阻止页面的用户交互。
+
+---
+
+#### Toast库的调整
+
+* `Toast`添加`makeToastActivity: withText:`方法，给`Activity`添加小段文字。
+* `Toast`添加`Activity`的遮罩层，显示期间不响应用户交互事件。
 
 ## Example
 
@@ -39,7 +53,11 @@ pod 'XToast'
 
 + (void)showLoading;
 
++ (void)showLoadingAndHideAfter:(NSTimeInterval)interval;
+
 + (void)showLoadingWithText:(NSString *)text;
+
++ (void)showLoadingWithText:(NSString *)text hideAfter:(NSTimeInterval)interval;
 
 + (void)hideLoading;
 
@@ -50,9 +68,15 @@ pod 'XToast'
 
 + (void)showLoadingInView:(UIView *)view;
 
-+ (void)showLoadingInView:(UIView *)view withText:(NSString *)text;
++ (void)showLoadingInView:(UIView *)view hideAfter:(NSTimeInterval)interval;
+
++ (void)showLoadingWithText:(NSString *)text inView:(UIView *)view;
+
++ (void)showLoadingWithText:(NSString *)text inView:(UIView *)view hideAfter:(NSTimeInterval)interval;
 
 + (void)hideLoadingInView:(UIView *)view;
+
+// You can set the "CSToastManager" to customize it if you needed, use by #import "UIView+Toast.h"
 ```
 
 ## Author

@@ -178,7 +178,7 @@ extern const NSString * CSToastPositionBottom;
 - (void)makeToastActivity:(id)position;
 
 /**
- 新增方法：提示上添加文字
+ Creates and displays a new toast activity indicator view with text at a specified position.
  */
 - (void)makeToastActivity:(id)position withText:(NSString *)text;
 
@@ -342,6 +342,11 @@ extern const NSString * CSToastPositionBottom;
  The fade in/out animation duration. Default is 0.2.
  */
 @property (assign, nonatomic) NSTimeInterval fadeDuration;
+
+/**
+ The alpha of activity's cover view. Default is 0.2.
+ */
+@property (assign, nonatomic) CGFloat coverAlpha;
 
 /**
  Creates a new instance of `CSToastStyle` with all the default values set.

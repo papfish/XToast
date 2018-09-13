@@ -375,6 +375,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
 #pragma mark - Activity Methods
 
 - (void)makeToastActivity:(id)position {
+    
     // sanity
     UIView *existingActivityView = (UIView *)objc_getAssociatedObject(self, &CSToastActivityViewKey);
     if (existingActivityView != nil) return;
@@ -384,7 +385,6 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     UIView *activityView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, style.activitySize.width, style.activitySize.height)];
     activityView.center = [self cs_centerPointForPosition:position withToast:activityView];
     activityView.backgroundColor = style.backgroundColor;
-    activityView.alpha = 0.0;
     activityView.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin);
     activityView.layer.cornerRadius = style.cornerRadius;
     
@@ -400,20 +400,34 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     [activityView addSubview:activityIndicatorView];
     [activityIndicatorView startAnimating];
     
-    // associate the activity view with self
-    objc_setAssociatedObject (self, &CSToastActivityViewKey, activityView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    // add background view
+    UIView *backgroundActivityView = [[UIView alloc] initWithFrame:self.bounds];
+    backgroundActivityView.backgroundColor = [UIColor clearColor];
+    backgroundActivityView.alpha = 0.0;
+    [self addSubview:backgroundActivityView];
     
-    [self addSubview:activityView];
+    // add cover view
+    UIView *coverActivityView = [[UIView alloc] initWithFrame:backgroundActivityView.bounds];
+    coverActivityView.backgroundColor = [UIColor blackColor];
+    coverActivityView.alpha = style.coverAlpha;
+    [backgroundActivityView addSubview:coverActivityView];
+    
+    // add activity view
+    [backgroundActivityView addSubview:activityView];
+    
+    // associate the activity view with self
+    objc_setAssociatedObject (self, &CSToastActivityViewKey, backgroundActivityView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     [UIView animateWithDuration:style.fadeDuration
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         activityView.alpha = 1.0;
+                         backgroundActivityView.alpha = 1.0;
                      } completion:nil];
 }
 
 - (void)makeToastActivity:(id)position withText:(NSString *)text {
+    
     // sanity
     UIView *existingActivityView = (UIView *)objc_getAssociatedObject(self, &CSToastActivityViewKey);
     if (existingActivityView != nil) return;
@@ -423,7 +437,6 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     UIView *activityView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, style.activitySize.width, style.activitySize.height)];
     activityView.center = [self cs_centerPointForPosition:position withToast:activityView];
     activityView.backgroundColor = style.backgroundColor;
-    activityView.alpha = 0.0;
     activityView.autoresizingMask = (UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin);
     activityView.layer.cornerRadius = style.cornerRadius;
     
@@ -446,16 +459,29 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     label.textColor = style.titleColor;
     [activityView addSubview:label];
     
-    // associate ourselves with the activity view
-    objc_setAssociatedObject (self, &CSToastActivityViewKey, activityView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    activityView.alpha = 1.0;
-    [self addSubview:activityView];
+    // add background view
+    UIView *backgroundActivityView = [[UIView alloc] initWithFrame:self.bounds];
+    backgroundActivityView.backgroundColor = [UIColor clearColor];
+    backgroundActivityView.alpha = 0.0;
+    [self addSubview:backgroundActivityView];
+    
+    // add cover view
+    UIView *coverActivityView = [[UIView alloc] initWithFrame:backgroundActivityView.bounds];
+    coverActivityView.backgroundColor = [UIColor blackColor];
+    coverActivityView.alpha = style.coverAlpha;
+    [backgroundActivityView addSubview:coverActivityView];
+    
+    // add activity view
+    [backgroundActivityView addSubview:activityView];
+    
+    // associate the activity view with self
+    objc_setAssociatedObject (self, &CSToastActivityViewKey, backgroundActivityView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     [UIView animateWithDuration:style.fadeDuration
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         activityView.alpha = 1.0;
+                         backgroundActivityView.alpha = 1.0;
                      } completion:nil];
 }
 
@@ -531,6 +557,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
         self.imageSize = CGSizeMake(80.0, 80.0);
         self.activitySize = CGSizeMake(100.0, 100.0);
         self.fadeDuration = 0.2;
+        self.coverAlpha = 0.2;
     }
     return self;
 }
