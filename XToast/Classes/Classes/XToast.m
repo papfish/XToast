@@ -6,17 +6,17 @@
 //
 
 #import "XToast.h"
-#import "UIView+Toast.h"
+#import "UIView+XToast.h"
 
 static const NSString *loading_text_def = @"Loading";
 
 @implementation XToast
 
 + (void)load {
-    [CSToastManager setTapToDismissEnabled:YES];
-    [CSToastManager setQueueEnabled:NO];
-    [CSToastManager setDefaultPosition:CSToastPositionCenter];
-    [CSToastManager setDefaultDuration:3.0];
+    [XCSToastManager setTapToDismissEnabled:YES];
+    [XCSToastManager setQueueEnabled:NO];
+    [XCSToastManager setDefaultPosition:XCSToastPositionCenter];
+    [XCSToastManager setDefaultDuration:3.0];
 }
 
 // Show in the window
@@ -24,15 +24,15 @@ static const NSString *loading_text_def = @"Loading";
     if (!text || ![text isKindOfClass:[NSString class]] || text.length == 0) {
         return;
     }
-    [[XToast window] makeToast:text];
+    [[XToast window] x_makeToast:text];
 }
 
 + (void)hideToast {
-    [[XToast window] hideToast];
+    [[XToast window] x_hideToast];
 }
 
 + (void)showLoading {
-    [[XToast window] makeToastActivity:CSToastPositionCenter];
+    [[XToast window] x_makeToastActivity:XCSToastPositionCenter];
 }
 
 + (void)showLoadingAndHideAfter:(NSTimeInterval)interval {
@@ -45,7 +45,7 @@ static const NSString *loading_text_def = @"Loading";
 }
 
 + (void)showLoadingWithText:(NSString *)text {
-    [[XToast window] makeToastActivity:CSToastPositionCenter withText:text ? text : loading_text_def];
+    [[XToast window] x_makeToastActivity:XCSToastPositionCenter withText:text ? text : loading_text_def];
 }
 
 + (void)showLoadingWithText:(NSString *)text hideAfter:(NSTimeInterval)interval {
@@ -58,7 +58,7 @@ static const NSString *loading_text_def = @"Loading";
 }
 
 + (void)hideLoading {
-    [[XToast window] hideToastActivity];
+    [[XToast window] x_hideToastActivity];
 }
 
 // Get the window
@@ -69,17 +69,17 @@ static const NSString *loading_text_def = @"Loading";
 // Show in the view
 + (void)showToastWithText:(NSString *)text inView:(UIView *)view {
     if (!view) return;
-    [view makeToast:text];
+    [view x_makeToast:text];
 }
 
 + (void)hideToastInView:(UIView *)view {
     if (!view) return;
-    [view hideToast];
+    [view x_hideToast];
 }
 
 + (void)showLoadingInView:(UIView *)view {
     if (!view) return;
-    [view makeToastActivity:CSToastPositionCenter];
+    [view x_makeToastActivity:XCSToastPositionCenter];
 }
 
 + (void)showLoadingInView:(UIView *)view hideAfter:(NSTimeInterval)interval {
@@ -94,7 +94,7 @@ static const NSString *loading_text_def = @"Loading";
 
 + (void)showLoadingWithText:(NSString *)text inView:(UIView *)view {
     if (!view) return;
-    [view makeToastActivity:CSToastPositionCenter withText:text ? text : loading_text_def];
+    [view x_makeToastActivity:XCSToastPositionCenter withText:text ? text : loading_text_def];
 }
 
 + (void)showLoadingWithText:(NSString *)text inView:(UIView *)view hideAfter:(NSTimeInterval)interval {
@@ -109,7 +109,7 @@ static const NSString *loading_text_def = @"Loading";
 
 + (void)hideLoadingInView:(UIView *)view {
     if (!view) return;
-    [view hideToastActivity];
+    [view x_hideToastActivity];
 }
 
 @end

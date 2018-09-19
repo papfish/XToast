@@ -11,7 +11,7 @@
 #endif
 
 #import "XToast.h"
-#import "UIView+Toast.h"
+#import "UIView+XToast.h"
 
 FOUNDATION_EXPORT double XToastVersionNumber;
 FOUNDATION_EXPORT const unsigned char XToastVersionString[];
