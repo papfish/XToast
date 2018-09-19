@@ -24,15 +24,21 @@ static const NSString *loading_text_def = @"Loading";
     if (!text || ![text isKindOfClass:[NSString class]] || text.length == 0) {
         return;
     }
-    [[XToast window] x_makeToast:text];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[XToast window] x_makeToast:text];
+    });
 }
 
 + (void)hideToast {
-    [[XToast window] x_hideToast];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[XToast window] x_hideToast];
+    });
 }
 
 + (void)showLoading {
-    [[XToast window] x_makeToastActivity:XCSToastPositionCenter];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[XToast window] x_makeToastActivity:[XCSToastManager defaultPosition]];
+    });
 }
 
 + (void)showLoadingAndHideAfter:(NSTimeInterval)interval {
@@ -45,7 +51,9 @@ static const NSString *loading_text_def = @"Loading";
 }
 
 + (void)showLoadingWithText:(NSString *)text {
-    [[XToast window] x_makeToastActivity:XCSToastPositionCenter withText:text ? text : loading_text_def];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[XToast window] x_makeToastActivity:[XCSToastManager defaultPosition] withText:text ? text : loading_text_def];
+    });
 }
 
 + (void)showLoadingWithText:(NSString *)text hideAfter:(NSTimeInterval)interval {
@@ -58,7 +66,9 @@ static const NSString *loading_text_def = @"Loading";
 }
 
 + (void)hideLoading {
-    [[XToast window] x_hideToastActivity];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[XToast window] x_hideToastActivity];
+    });
 }
 
 // Get the window
@@ -69,17 +79,23 @@ static const NSString *loading_text_def = @"Loading";
 // Show in the view
 + (void)showToastWithText:(NSString *)text inView:(UIView *)view {
     if (!view) return;
-    [view x_makeToast:text];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [view x_makeToast:text];
+    });
 }
 
 + (void)hideToastInView:(UIView *)view {
     if (!view) return;
-    [view x_hideToast];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [view x_hideToast];
+    });
 }
 
 + (void)showLoadingInView:(UIView *)view {
     if (!view) return;
-    [view x_makeToastActivity:XCSToastPositionCenter];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [view x_makeToastActivity:[XCSToastManager defaultPosition]];
+    });
 }
 
 + (void)showLoadingInView:(UIView *)view hideAfter:(NSTimeInterval)interval {
@@ -94,7 +110,9 @@ static const NSString *loading_text_def = @"Loading";
 
 + (void)showLoadingWithText:(NSString *)text inView:(UIView *)view {
     if (!view) return;
-    [view x_makeToastActivity:XCSToastPositionCenter withText:text ? text : loading_text_def];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [view x_makeToastActivity:[XCSToastManager defaultPosition] withText:text ? text : loading_text_def];
+    });
 }
 
 + (void)showLoadingWithText:(NSString *)text inView:(UIView *)view hideAfter:(NSTimeInterval)interval {
@@ -109,7 +127,9 @@ static const NSString *loading_text_def = @"Loading";
 
 + (void)hideLoadingInView:(UIView *)view {
     if (!view) return;
-    [view x_hideToastActivity];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [view x_hideToastActivity];
+    });
 }
 
 @end

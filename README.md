@@ -16,6 +16,7 @@ XToast是基于 [https://github.com/scalessec/Toast](https://github.com/scalesse
 * 支持显示在`View`或者`Window`上，使用默认的配置信息。
 * 添加超时自动消失的`Loading View`，支持添加小段文字。
 * 添加`Loading View`的遮罩层，并阻止页面的用户交互。
+* `Toast`和`Loading`方法都在主线程执行，避免UI线程问题。
 
 ---
 
@@ -23,6 +24,7 @@ XToast是基于 [https://github.com/scalessec/Toast](https://github.com/scalesse
 
 * `Toast`添加`makeToastActivity: withText:`方法，给`Activity`添加小段文字。
 * `Toast`添加`Activity`的遮罩层，显示期间不响应用户交互事件。
+* `Toast`添加类名及方法名前缀，避免重名问题。
 
 ## Example
 
@@ -34,14 +36,14 @@ XToast is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'XToast'
+pod 'XToast ~> 0.3.0'
 ```
 ## Usage
 
 **Step 1:**
 
 ```
-#import "XToast.h"
+#import <XToast/XToast.h>
 ```
 
 **Step 2:**
@@ -76,7 +78,7 @@ pod 'XToast'
 
 + (void)hideLoadingInView:(UIView *)view;
 
-// You can set the "CSToastManager" to customize it if you needed, use by #import "UIView+Toast.h"
+// You can set the "XCSToastManager" to customize it if you needed, use by #import "UIView+XToast.h"
 ```
 
 ## Author
