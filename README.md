@@ -78,7 +78,7 @@ pod 'XToast ~> 0.3.0'
 
 + (void)hideLoadingInView:(UIView *)view;
 
-// You can set the "XCSToastManager" to customize it if you needed, use by #import "UIView+XToast.h"
+// You can set the "XCSToastManager" to customize it if you needed, use by #import <XToast/UIView+XToast.h>
 ```
 
 ## Author

@@ -8,6 +8,7 @@
 
 #import "XViewController.h"
 #import "XToast-umbrella.h"
+//#import "UIView+XToast.h"
 
 @interface XViewController ()
 
@@ -20,9 +21,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-//    CSToastStyle *style = [[CSToastStyle alloc] initWithDefaultStyle];
+//    XCSToastStyle *style = [[XCSToastStyle alloc] initWithDefaultStyle];
 //    style.titleColor = [UIColor redColor];
-//    [CSToastManager setSharedStyle:style];
+//    [XCSToastManager setSharedStyle:style];
 }
 
 - (IBAction)toastEvent:(UIButton *)sender {

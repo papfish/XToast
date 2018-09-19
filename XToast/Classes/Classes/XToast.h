@@ -42,6 +42,6 @@
 
 + (void)hideLoadingInView:(UIView *)view;
 
-// You can set the "CSToastManager" to customize it if you needed, use by #import "UIView+Toast.h"
+// You can set the "XCSToastManager" to customize it if you needed, use by #import <XToast/UIView+XToast.h>
 
 @end
