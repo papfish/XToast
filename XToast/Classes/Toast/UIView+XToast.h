@@ -420,6 +420,21 @@ extern const NSString * XCSToastPositionBottom;
 + (BOOL)isQueueEnabled;
 
 /**
+ Enables or disables activity's cover view. Default is YES
+
+ @param coverEnabled YES or NO
+ */
++ (void)setCoverEnabled:(BOOL)coverEnabled;
+
+/**
+ Return `YES` if the activity's cover view is enabled, otherwise `NO`.
+ Default is `YES`
+
+ @return BOOL
+ */
++ (BOOL)isCoverEnabled;
+
+/**
  Sets the default duration. Used for the `makeToast:` and
  `showToast:` methods that don't require an explicit duration.
  Default is 3.0.

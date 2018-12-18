@@ -404,6 +404,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     UIView *backgroundActivityView = [[UIView alloc] initWithFrame:self.bounds];
     backgroundActivityView.backgroundColor = [UIColor clearColor];
     backgroundActivityView.alpha = 0.0;
+    backgroundActivityView.userInteractionEnabled = [XCSToastManager isCoverEnabled];
     [self addSubview:backgroundActivityView];
     
     // add cover view
@@ -463,6 +464,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
     UIView *backgroundActivityView = [[UIView alloc] initWithFrame:self.bounds];
     backgroundActivityView.backgroundColor = [UIColor clearColor];
     backgroundActivityView.alpha = 0.0;
+    backgroundActivityView.userInteractionEnabled = [XCSToastManager isCoverEnabled];
     [self addSubview:backgroundActivityView];
     
     // add cover view
@@ -581,6 +583,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
 @property (strong, nonatomic) XCSToastStyle *sharedStyle;
 @property (assign, nonatomic, getter=isTapToDismissEnabled) BOOL tapToDismissEnabled;
 @property (assign, nonatomic, getter=isQueueEnabled) BOOL queueEnabled;
+@property (assign, nonatomic, getter=isCoverEnabled) BOOL coverEnabled;
 @property (assign, nonatomic) NSTimeInterval defaultDuration;
 @property (strong, nonatomic) id defaultPosition;
 
@@ -606,6 +609,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
         self.sharedStyle = [[XCSToastStyle alloc] initWithDefaultStyle];
         self.tapToDismissEnabled = YES;
         self.queueEnabled = NO;
+        self.coverEnabled = YES;
         self.defaultDuration = 3.0;
         self.defaultPosition = XCSToastPositionBottom;
     }
@@ -636,6 +640,14 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
 
 + (BOOL)isQueueEnabled {
     return [[self sharedManager] isQueueEnabled];
+}
+
++ (void)setCoverEnabled:(BOOL)coverEnabled {
+    [[self sharedManager] setCoverEnabled:coverEnabled];
+}
+
++ (BOOL)isCoverEnabled {
+    return [[self sharedManager] isCoverEnabled];
 }
 
 + (void)setDefaultDuration:(NSTimeInterval)duration {

@@ -24,6 +24,8 @@
 //    XCSToastStyle *style = [[XCSToastStyle alloc] initWithDefaultStyle];
 //    style.titleColor = [UIColor redColor];
 //    [XCSToastManager setSharedStyle:style];
+    
+//    [XCSToastManager setCoverEnabled:NO];
 }
 
 - (IBAction)toastEvent:(UIButton *)sender {

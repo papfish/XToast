@@ -23,7 +23,7 @@ XToast是基于 [https://github.com/scalessec/Toast](https://github.com/scalesse
 #### Toast库的调整
 
 * `Toast`添加`makeToastActivity: withText:`方法，给`Activity`添加小段文字。
-* `Toast`添加`Activity`的遮罩层，显示期间不响应用户交互事件。
+* `Toast`添加`Activity`的遮罩层，可设置`setCoverEnabled`是否阻止用户交互事件。
 * `Toast`添加类名及方法名前缀，避免重名问题。
 
 ## Example
@@ -36,7 +36,7 @@ XToast is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'XToast ~> 0.3.0'
+pod 'XToast ~> 0.3.1'
 ```
 ## Usage
 
