@@ -65,7 +65,7 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8830F8DD26D02FB1CEF14544 /* Pods_XToast_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XToast_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90E3B67F9631F946B9DE7C2E /* Pods-XToast_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XToast_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XToast_Tests/Pods-XToast_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		BF64BE82F14C3DB81B1D2A2B /* XToast.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XToast.podspec; path = ../XToast.podspec; sourceTree = "<group>"; };
+		BF64BE82F14C3DB81B1D2A2B /* XToast.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = XToast.podspec; path = ../XToast.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FCEF3E5D6969A67F0C9C2F60 /* Pods-XToast_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XToast_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XToast_Example/Pods-XToast_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,7 +336,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-XToast_Example/Pods-XToast_Example-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-XToast_Example/Pods-XToast_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/XToast/XToast.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -345,7 +345,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-XToast_Example/Pods-XToast_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XToast_Example/Pods-XToast_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

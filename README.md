@@ -1,6 +1,6 @@
 # XToast
 
-[![CI Status](https://img.shields.io/travis/xuliang/XToast.svg?style=flat)](https://travis-ci.org/xuliang/XToast)
+[![CI Status](https://img.shields.io/travis/papfish/XToast.svg?style=flat)](https://travis-ci.org/papfish/XToast)
 [![Version](https://img.shields.io/cocoapods/v/XToast.svg?style=flat)](https://cocoapods.org/pods/XToast)
 [![License](https://img.shields.io/cocoapods/l/XToast.svg?style=flat)](https://cocoapods.org/pods/XToast)
 [![Platform](https://img.shields.io/cocoapods/p/XToast.svg?style=flat)](https://cocoapods.org/pods/XToast)
@@ -83,7 +83,7 @@ pod 'XToast', '~> 0.3.1'
 
 ## Author
 
-Leo, liang.xv@qq.com
+liang.xv@qq.com
 
 ## License
 
