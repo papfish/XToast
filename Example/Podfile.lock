@@ -1,5 +1,5 @@
 PODS:
-  - XToast (0.3.1)
+  - XToast (0.3.2)
 
 DEPENDENCIES:
   - XToast (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  XToast: f52496b817ca5a5b757e6f13012388ebd685331b
+  XToast: d71464329d1fae103604b672b677e17329e3a259
 
 PODFILE CHECKSUM: 25ed3e9453ceee69dc0320f279eccdd5202e6c14
 
