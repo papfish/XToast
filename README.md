@@ -36,7 +36,7 @@ XToast is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'XToast', '~> 0.3.1'
+pod 'XToast'
 ```
 ## Usage
 
